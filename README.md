@@ -2,27 +2,20 @@
 
 ## Reference
 
-http://nginx.org/en/docs/http/ngx_http_dav_module.html
-
-https://github.com/arut/nginx-dav-ext-module
+copy from: https://github.com/duxlong/webdav
 
 ## Features
 
-源码编译 nginx + http_dav_module + nginx-dav-ext-module 安装，镜像体积小
-
-支持 `-e USERNAME xxx -e PASSWORD xxx` 设置单用户登录
-
-支持 `-v /your/htpasswd:/opt/nginx/conf/htpasswd:ro` 设置多用户登录
-
-多用户登录方式优先级更高
+优化打包命令
+优化dockerhub上的镜像tag
 
 ## Github
 
-https://github.com/duxlong/webdav
+[https://github.com/duxlong/webdav](https://github.com/langren1353/webdav)
 
 ## Docker hub
 
-https://hub.docker.com/r/duxlong/webdav
+https://hub.docker.com/r/langren1353/webdav
 
 ## Usage
 
@@ -43,7 +36,7 @@ docker run -d \
     -p 8001:80 \
     --restart=unless-stopped \
     --name=webdav \
-    duxlong/webdav
+    langren1353/webdav
 ```
 
 docker run 根据自己情况修改-多用户
@@ -57,7 +50,7 @@ docker run -d \
     -p 8001:80 \
     --restart=unless-stopped \
     --name=webdav \
-    duxlong/webdav
+    langren1353/webdav
 ```
 
 - 支持多用户；运行容器前，需要在线网站生成并配置好 `htpasswd` 文件（默认 Md5 算法加密）
@@ -72,7 +65,7 @@ version: "2"
 services:
   webdav:
     container_name: webdav
-    image: duxlong/webdav
+    image: langren1353/webdav
     network_mode: bridge
     restart: unless-stopped
     volumes:
