@@ -13,7 +13,7 @@ RUN apk update && \
     cd /tmp && \
     wget https://github.com/nginx/nginx/archive/master.zip -O nginx.zip && \
     unzip nginx.zip && \
-    wget https://github.com/arut/nginx-dav-ext-module/archive/master.zip -O dav-ext-module.zip && \
+    wget https://github.com/MkfsSion/nginx-dav-ext-module/archive/master.zip -O dav-ext-module.zip && \
     unzip dav-ext-module.zip && \
     cd nginx-master && \
     ./auto/configure --prefix=/opt/nginx --with-http_dav_module --add-module=/tmp/nginx-dav-ext-module-master && \
